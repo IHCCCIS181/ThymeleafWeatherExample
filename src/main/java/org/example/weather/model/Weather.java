@@ -1,13 +1,22 @@
 package org.example.weather.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+
+//TODO add validation
+
+@Document(collection = "weather")
 public class Weather {
+
+    @Id
+    public String id;
     public String city;
     public State state;
     public double tempC;
