@@ -19,6 +19,7 @@ public class WeatherAdminController {
     @Autowired
     private WeatherService weatherService;
 
+
     @GetMapping("/{city}")
     public ResponseEntity<Weather> getWeatherByCity(@PathVariable String city) {
         Weather weather = weatherService.getWeather(city);

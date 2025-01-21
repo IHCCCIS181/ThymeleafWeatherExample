@@ -9,7 +9,6 @@ public interface WeatherService {
     Weather getWeather(String city);
     List<Weather> getWeatherByState(State state);
     void addWeather(WeatherDTO weather) throws CityAndStateAlreadyExistsException;
-//    void cityStateUnique(String city, State state);
     void updateWeather(WeatherDTO weather);
     void deleteWeather(String city, State state);
 }

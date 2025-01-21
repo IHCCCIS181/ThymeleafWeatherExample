@@ -27,12 +27,12 @@ public class Weather {
     public int windMpH;
 
 
-    public Weather(String city, State state, double tempC, double prec, double hum, int windKmH) {
+    public Weather(String city, State state, double tempC, double precipitation, double hum, int windKmH) {
         this.city = city;
         this.state = state;
         this.tempC = tempC;
         this.tempF = convertCtoF(tempC);
-        this.precipitation = prec;
+        this.precipitation = precipitation;
         this.humidity = hum;
         this.windKmH = windKmH;
         this.windMpH = convertKmHToMpH(windKmH);
