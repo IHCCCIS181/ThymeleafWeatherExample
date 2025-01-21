@@ -14,18 +14,8 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @GetMapping("/")
-    public String showForm(@RequestParam(required = false) String city,
-                           @RequestParam(required = false) State state,
-                           Model model) {
-        if (city != null && !city.isEmpty()) {
-            model.addAttribute("weatherList", weatherService.getWeather(city));
-        } else if (state != null) {
-            model.addAttribute("weatherList", weatherService.getWeatherByState(state));
-        }
 
-        return "weatherDisplay";
-    }
+    //TODO build Thymeleaf controller
 }
 
 

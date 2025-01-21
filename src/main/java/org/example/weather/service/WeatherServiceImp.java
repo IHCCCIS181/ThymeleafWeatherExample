@@ -12,57 +12,35 @@ import java.util.List;
 @Service
 public class WeatherServiceImp implements WeatherService {
 
+    //TODO build service layer
+
     @Autowired
     private WeatherRepository weatherRepository;
 
+
     @Override
     public Weather getWeather(String city) {
-        return weatherRepository.findByCity(city);
+        return null;
     }
 
     @Override
     public List<Weather> getWeatherByState(State state) {
-        return weatherRepository.findByState(state);
+        return List.of();
     }
 
     @Override
-    public void addWeather(WeatherDTO weatherDTO) throws CityAndStateAlreadyExistsException {
-        //Checking if it exists
-        //This might not be right
-        if(weatherRepository.findByStateAndCity(weatherDTO.getState(), weatherDTO.getCity()) != null) {
-            throw new CityAndStateAlreadyExistsException();
-        }
-        Weather weather = new Weather(
-                weatherDTO.getCity(),
-                weatherDTO.getState(),
-                weatherDTO.getTempC(),
-                weatherDTO.getPrecipitation(),
-                weatherDTO.getHumidity(),
-                weatherDTO.getWindKmH()
-        );
-        weatherRepository.save(weather);
+    public void addWeather(WeatherDTO weather) throws CityAndStateAlreadyExistsException {
+
     }
 
-
     @Override
-    public void updateWeather(WeatherDTO weatherDTO) {
-        Weather existingWeather = getWeather(weatherDTO.getCity());
-        if (existingWeather != null) {
-            existingWeather.setState(weatherDTO.getState());
-            existingWeather.setTempC(weatherDTO.getTempC());
-            existingWeather.setPrecipitation(weatherDTO.getPrecipitation());
-            existingWeather.setHumidity(weatherDTO.getHumidity());
-            existingWeather.setWindKmH(weatherDTO.getWindKmH());
-            weatherRepository.save(existingWeather);
-        }
+    public void updateWeather(WeatherDTO weather) {
+
     }
 
     @Override
     public void deleteWeather(String city, State state) {
-        Weather weather = getWeather(city);
-        if (weather != null && weather.getState().equals(state)) {
-            weatherRepository.delete(weather);
-        }
+
     }
 }
 

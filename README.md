@@ -10,7 +10,7 @@ The following tech was used in this project.
 * [Thymeleaf](https://docs.spring.io/spring-boot/3.4.1/reference/web/servlet.html#web.servlet.spring-mvc.template-engines)
 * [Validation](https://docs.spring.io/spring-boot/3.4.1/reference/io/validation.html)
 * [Spring Web](https://docs.spring.io/spring-boot/3.4.1/reference/web/servlet.html)
-* [selenium](https://www.selenium.dev/documentation/)
+* [Selenium](https://www.selenium.dev/documentation/)
 
 ## Getting Starred
 
