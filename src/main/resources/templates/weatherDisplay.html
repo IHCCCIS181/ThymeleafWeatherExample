@@ -38,7 +38,7 @@
     </thead>
     <tbody>
     <tr th:each="weather : ${weatherList}">
-        <td th:text="${weather.city}"></td>
+        <td id="cityName" th:text="${weather.city}"></td>
         <td th:text="${weather.state}"></td>
         <td th:text="${weather.tempC}"></td>
         <td th:text="${weather.tempF}"></td>
